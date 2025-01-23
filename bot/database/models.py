@@ -3,6 +3,8 @@ from sqlalchemy import BigInteger
 from bot.database.database import Base
 
 class User(Base):
+    __tablename__ = "users"
+
     """
     SQLAlchemy model representing a user.
 

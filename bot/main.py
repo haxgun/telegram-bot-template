@@ -4,6 +4,7 @@ import datetime
 from aiogram.types import BotCommand, BotCommandScopeDefault
 from loguru import logger
 from bot.config import bot, admins, dp
+from bot.handlers import register_handler
 
 # Function to set up the command menu (default for all users)
 async def set_commands() -> None:
@@ -20,6 +21,7 @@ async def start_bot() -> None:
     Also sets up the default commands.
     """
     await set_commands()
+    await register_handler(dp)
     for admin_id in admins:
         try:
             message = (f'🤖 Hello! I am running 🥳\n'

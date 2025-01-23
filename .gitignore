@@ -138,3 +138,6 @@ cython_debug/
 .pypirc
 /.idea/vcs.xml
 /.python-version
+/bot/migration/versions
+/data/database.db
+/log.txt

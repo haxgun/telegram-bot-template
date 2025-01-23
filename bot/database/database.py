@@ -1,14 +1,17 @@
 from datetime import datetime
-from bot.config import database_url
+
 from sqlalchemy import func, TIMESTAMP, Integer
-from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine, AsyncSession
+from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
+
+from bot.config import database_url
 
 # Create an asynchronous database engine using the provided database URL
 engine = create_async_engine(url=database_url)
 
 # Create an asynchronous session factory for database interactions
 async_session_maker = async_sessionmaker(engine, class_=AsyncSession)
+
 
 class Base(AsyncAttrs, DeclarativeBase):
     """

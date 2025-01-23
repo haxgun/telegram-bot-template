@@ -2,8 +2,8 @@ from typing import Any, Awaitable, Callable, Dict
 from typing import Union
 
 from aiogram import BaseMiddleware
-from aiogram.types import Message
 from aiogram.exceptions import TelegramBadRequest
+from aiogram.types import Message
 
 from bot.config import admins
 

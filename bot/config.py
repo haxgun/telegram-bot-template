@@ -1,13 +1,15 @@
 from pathlib import Path
-from loguru import logger
+
 from aiogram import Bot, Dispatcher
+from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.client.default import DefaultBotProperties
+from loguru import logger
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Define the base directory of the project
 BASE_DIR = Path(__file__).resolve().parents[1]
+
 
 class Settings(BaseSettings):
     """
@@ -30,6 +32,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env")
 
+
 def configure_logging(log_file: str, log_format: str, log_rotation: str) -> None:
     """
     Configures the logging system.
@@ -40,6 +43,7 @@ def configure_logging(log_file: str, log_format: str, log_rotation: str) -> None
         log_rotation (str): Rotation strategy for log files (e.g., file size or time interval).
     """
     logger.add(log_file, format=log_format, level="INFO", rotation=log_rotation)
+
 
 # Load application settings from environment variables or `.env` file
 settings = Settings()

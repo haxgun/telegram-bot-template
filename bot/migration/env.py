@@ -1,8 +1,8 @@
-from sqlalchemy import pool
-from sqlalchemy.engine import Connection
-
 import sys
 from os.path import dirname, abspath
+
+from sqlalchemy import pool
+from sqlalchemy.engine import Connection
 
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 

@@ -3,8 +3,10 @@ import datetime
 
 from aiogram.types import BotCommand, BotCommandScopeDefault
 from loguru import logger
+
 from bot.config import bot, admins, dp
 from bot.handlers import register_handler
+
 
 # Function to set up the command menu (default for all users)
 async def set_commands() -> None:
@@ -13,6 +15,7 @@ async def set_commands() -> None:
     """
     commands = [BotCommand(command='start', description='Start')]
     await bot.set_my_commands(commands, BotCommandScopeDefault())
+
 
 # Function that will execute when the bot starts
 async def start_bot() -> None:
@@ -32,6 +35,7 @@ async def start_bot() -> None:
             pass
     logger.info("Bot successfully started.")
 
+
 # Function that will execute when the bot stops
 async def stop_bot() -> None:
     """
@@ -47,6 +51,7 @@ async def stop_bot() -> None:
         pass
     logger.error("Bot stopped!")
 
+
 async def main() -> None:
     """
     Registers startup and shutdown functions and starts the bot with long polling.
@@ -61,6 +66,7 @@ async def main() -> None:
         await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
     finally:
         await bot.session.close()
+
 
 if __name__ == "__main__":
     # Run the main async function

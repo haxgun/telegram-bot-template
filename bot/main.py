@@ -1,4 +1,6 @@
 import asyncio
+import datetime
+
 from aiogram.types import BotCommand, BotCommandScopeDefault
 from loguru import logger
 from bot.config import bot, admins, dp
@@ -20,7 +22,9 @@ async def start_bot() -> None:
     await set_commands()
     for admin_id in admins:
         try:
-            await bot.send_message(admin_id, f'I am running 🥳')
+            message = (f'🤖 Hello! I am running 🥳\n'
+                       f'⏰ Launched in {datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")}\n')
+            await bot.send_message(admin_id, message)
         except Exception as e:
             logger.error(f"Failed to send message to admin {admin_id}: {e}")
             pass
@@ -33,7 +37,9 @@ async def stop_bot() -> None:
     """
     try:
         for admin_id in admins:
-            await bot.send_message(admin_id, 'Bot is stopped. Why?😔')
+            message = (f'🤖 Bot is stopped. Why? 😔\n'
+                       f'⏰ Launched in {datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")}\n')
+            await bot.send_message(admin_id, message)
     except Exception as e:
         logger.error(f"Failed to send message to admin {admin_id}: {e}")
         pass

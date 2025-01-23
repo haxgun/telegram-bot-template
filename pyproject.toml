@@ -4,4 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "aiogram>=3.17.0",
+    "aiosqlite>=0.20.0",
+    "alembic>=1.14.1",
+    "asyncio>=3.4.3",
+    "pydantic>=2.10.5",
+    "pydantic-settings>=2.7.1",
+    "sqlalchemy>=2.0.37",
+]

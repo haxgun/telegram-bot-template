@@ -49,7 +49,7 @@ log_file_path = BASE_DIR / "log.txt"
 configure_logging(log_file_path, settings.FORMAT_LOG, settings.LOG_ROTATION)
 
 # Create a bot instance with the specified token and default properties
-bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN_V2))
+bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 # Create a dispatcher instance with an in-memory storage for FSM
 dp = Dispatcher(storage=MemoryStorage())

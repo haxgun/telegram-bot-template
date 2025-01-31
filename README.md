@@ -8,14 +8,15 @@
 
 ## Technology Stack and Features
 
-- 🔧 [**Aiogram**](https://docs.aiogram.dev/) (v3.17) for building Telegram bots with ease.
-- 📊 [SQLite](https://www.sqlite.org/index.html) for lightweight database storage using **aiosqlite**.
-- 🔌 [Alembic](https://alembic.sqlalchemy.org/) for database migrations.
-- ⚡ [Asyncio](https://docs.python.org/3/library/asyncio.html) for asynchronous programming.
-- 🛠️ [Pydantic](https://docs.pydantic.dev/) and [Pydantic Settings](https://docs.pydantic.dev/latest/usage/settings/) for robust data validation and settings management.
-- 🔮 [SQLAlchemy](https://www.sqlalchemy.org/) for database ORM.
-- 🎨 [Loguru](https://github.com/Delgan/loguru) for advanced logging capabilities.
-- ⚛ [UV](https://github.com/astral-sh/uv) extremely fast Python package and project manager, written in Rust.
+- 🔧 [**Aiogram**](https://docs.aiogram.dev/) `(v3.17)` for building Telegram bots with ease.
+- 🪴 [**Fluentogram**](https://github.com/Arustinal/fluentogram) a proper way to use an i18n mechanism with Aiogram3.
+- 📊 [**SQLite**](https://www.sqlite.org/index.html) for lightweight database storage using **aiosqlite**.
+- 🔌 [**Alembic**](https://alembic.sqlalchemy.org/) for database migrations.
+- ⚡ [**Asyncio**](https://docs.python.org/3/library/asyncio.html) for asynchronous programming.
+- 🛠️ [**Pydantic**](https://docs.pydantic.dev/) and [Pydantic Settings](https://docs.pydantic.dev/latest/usage/settings/) for robust data validation and settings management.
+- 🔮 [**SQLAlchemy**](https://www.sqlalchemy.org/) for database ORM.
+- 🎨 [**Loguru**](https://github.com/Delgan/loguru) for advanced logging capabilities.
+- ⚛ [**UV**](https://github.com/astral-sh/uv) extremely fast Python package and project manager, written in Rust.
 
 ## Installation and Setup
 

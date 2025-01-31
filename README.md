@@ -6,7 +6,7 @@
 [![Forks](https://img.shields.io/github/forks/haxgun/telegram-bot-template?style=flat&color=green)](https://github.com/haxgun/telegram-bot-template/forks)
 [![Issues](https://img.shields.io/github/issues/haxgun/telegram-bot-template?style=flat)](https://github.com/haxgun/telegram-bot-template/issues)
 
-## Technology Stack and Features
+## 🚀 Technology Stack and Features
 
 - 🔧 [**Aiogram**](https://docs.aiogram.dev/) `(v3.17)` for building Telegram bots with ease.
 - 🪴 [**Fluentogram**](https://github.com/Arustinal/fluentogram) a proper way to use an i18n mechanism with Aiogram3.
@@ -18,13 +18,13 @@
 - 🎨 [**Loguru**](https://github.com/Delgan/loguru) for advanced logging capabilities.
 - ⚛ [**UV**](https://github.com/astral-sh/uv) extremely fast Python package and project manager, written in Rust.
 
-## Installation and Setup
+## 🛠️  Installation and Setup
 
-### Prerequisites
-- Recommended Python version: **3.13**
-- Make sure to have [UV](https://github.com/your-package-manager/uv) installed.
+### 📋 Prerequisites
+- Recommended Python version: **3.12**
+- Make sure to have [UV](https://github.com/your-package-manager/uv) installed
 
-### Steps to Run
+### 🔧 Steps to Run
 
 1. Clone the repository:
    ```bash
@@ -57,7 +57,7 @@
    python3 -m bot.main
    ```
 
-## Directory Structure
+## 🗂️ Directory Structure
 
 ```
 telegram-bot-template/
@@ -65,29 +65,29 @@ telegram-bot-template/
 │   ├── __init__.py
 │   ├── main.py             # Main entry point
 │   ├── config.py           # Configuration settings
-│   ├── handlers/           # Bot handlers
-│   ├── keyboards/          # Custom keyboards
-│   ├── i18n/               # Internationalization
-│   ├── middlewares/        # Custom middlewares
-│   ├── services/           # Utility services
-│   ├── migrations/         # Alembic migrations
-│   │   ├── env.py          # Environment variables
-│   │   ├── script.py.mako  # Alembic migration script
-│   ├── database/           # Database files
-│   │   ├── database.py     # Database setup
-│   │   ├── models.py       # Database models
-├── data/                   # Data files
+│   ├── handlers/           # Bot handlers ✋
+│   ├── keyboards/          # Custom keyboards 🎹
+│   ├── i18n/               # Internationalization 🌍
+│   ├── middlewares/        # Custom middlewares 🔑
+│   ├── services/           # Utility services 🔧
+│   ├── migrations/         # Alembic migrations 🔄
+│   │   ├── env.py          # Environment variables 🌱
+│   │   ├── script.py.mako  # Alembic migration script 🔨
+│   ├── database/           # Database files 📊
+│   │   ├── database.py     # Database setup 🗄️
+│   │   ├── models.py       # Database models 🧑‍💻
+├── data/                   # Data files 📂
 │   ├── __init__.py
-├── .env.example            # Example environment variables
-├── .gitignore              # Ignored files
-├── alembic.ini             # Configuration file for Alembic
-├── LICENSE                 # License file
-├── pyproject.toml          # Dependencies
-├── requirements.txt        # Dependencies
-└── README.md
+├── .env.example            # Example environment variables 🌱
+├── .gitignore              # Ignored files 🚫
+├── alembic.ini             # Configuration file for Alembic ⚙️
+├── LICENSE                 # License file 📜
+├── pyproject.toml          # Dependencies 📋
+├── requirements.txt        # Dependencies 🔌
+└── README.md               # Project documentation 📚
 ```
 
-## Key Features
+## ✨ Key Features
 
 - Modular architecture for scalability.
 - Asynchronous database operations with SQLite.
@@ -95,7 +95,7 @@ telegram-bot-template/
 - Seamless environment variable management with Pydantic Settings.
 - Effortless database migrations with Alembic.
 
-## Environment Variables
+## 🌱 Environment Variables
 
 Ensure you have the following variables set in your `.env` file:
 
@@ -104,7 +104,7 @@ BOT_TOKEN=your-telegram-bot-token
 ADMIN_IDS=[AdminID1, AdminID2, AdminID3]
 ```
 
-## Contributing
+## 🧑‍💻 Contributing
 
 1. Fork the repository.
 2. Create your feature branch:
@@ -121,11 +121,11 @@ ADMIN_IDS=[AdminID1, AdminID2, AdminID3]
    ```
 5. Open a pull request.
 
-## License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-🌟 Happy Coding! 🌟
+🎉  Happy Coding! 🌟
 

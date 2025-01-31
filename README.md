@@ -66,6 +66,8 @@ telegram-bot-template/
 │   ├── main.py             # Main entry point
 │   ├── config.py           # Configuration settings
 │   ├── handlers/           # Bot handlers
+│   ├── keyboards/          # Custom keyboards
+│   ├── i18n/               # Internationalization
 │   ├── middlewares/        # Custom middlewares
 │   ├── services/           # Utility services
 │   ├── migrations/         # Alembic migrations
@@ -81,6 +83,7 @@ telegram-bot-template/
 ├── alembic.ini             # Configuration file for Alembic
 ├── LICENSE                 # License file
 ├── pyproject.toml          # Dependencies
+├── requirements.txt        # Dependencies
 └── README.md
 ```
 

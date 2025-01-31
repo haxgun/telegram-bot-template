@@ -4,6 +4,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
+from fluent_compiler.bundle import FluentBundle
+from fluentogram import TranslatorHub, FluentTranslator
 from loguru import logger
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -33,7 +35,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env")
 
 
-def configure_logging(log_file: str, log_format: str, log_rotation: str) -> None:
+def configure_logging(log_file: Path, log_format: str, log_rotation: str) -> None:
     """
     Configures the logging system.
 
@@ -52,11 +54,36 @@ settings = Settings()
 log_file_path = BASE_DIR / "log.txt"
 configure_logging(log_file_path, settings.FORMAT_LOG, settings.LOG_ROTATION)
 
+t_hub = TranslatorHub(
+    {
+        "ru": ("ru",)
+    },
+    translators=[
+        FluentTranslator(
+            "ru",
+            translator=FluentBundle.from_files(
+                "ru-RU",
+                filenames=[
+                    f"{BASE_DIR}/bot/i18n/ru/text.ftl",
+                    f"{BASE_DIR}/bot/i18n/ru/button.ftl",
+                ]
+            ),
+        )
+    ],
+    root_locale="ru",
+)
+
 # Create a bot instance with the specified token and default properties
-bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+bot = Bot(
+    token=settings.BOT_TOKEN,
+    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+)
 
 # Create a dispatcher instance with an in-memory storage for FSM
-dp = Dispatcher(storage=MemoryStorage())
+dp = Dispatcher(
+    t_hub=t_hub,
+    storage=MemoryStorage()
+)
 
 # List of administrator IDs
 admins = settings.ADMIN_IDS

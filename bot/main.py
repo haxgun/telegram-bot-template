@@ -6,6 +6,7 @@ from loguru import logger
 
 from bot.config import bot, admins, dp
 from bot.handlers import register_handler
+from bot.middlewares import TranslateMiddleware, ThrottlingMiddleware
 
 
 # Function to set up the command menu (default for all users)
@@ -16,6 +17,16 @@ async def set_commands() -> None:
     commands = [BotCommand(command='start', description='Start')]
     await bot.set_my_commands(commands, BotCommandScopeDefault())
 
+async def register_middlewares() -> None:
+    """
+    Registers the middlewares for the bot.
+    """
+    dp.message.middleware(ThrottlingMiddleware())
+    dp.message.outer_middleware(TranslateMiddleware())
+
+    dp.callback_query.middleware(ThrottlingMiddleware())
+    dp.callback_query.outer_middleware(TranslateMiddleware())
+
 
 # Function that will execute when the bot starts
 async def start_bot() -> None:
@@ -25,6 +36,8 @@ async def start_bot() -> None:
     """
     await set_commands()
     await register_handler(dp)
+    await register_middlewares()
+
     for admin_id in admins:
         try:
             message = (f'🤖 Hello! I am running 🥳\n'
@@ -64,6 +77,10 @@ async def main() -> None:
     try:
         await bot.delete_webhook(drop_pending_updates=True)
         await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
+    except ValueError as e:
+        logger.error("ValueError occurred: %s: ", e)
+    except KeyError as e:
+        logger.error("KeyError occurred: %s:", e)
     finally:
         await bot.session.close()
 

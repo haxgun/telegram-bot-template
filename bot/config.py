@@ -55,8 +55,9 @@ log_file_path = BASE_DIR / "log.txt"
 configure_logging(log_file_path, settings.FORMAT_LOG, settings.LOG_ROTATION)
 
 t_hub = TranslatorHub(
-    {
-        "ru": ("ru",)
+    locales_map = {
+        "ru": ("ru", "en"),
+        "en": ("en", "ru"),
     },
     translators=[
         FluentTranslator(
@@ -66,6 +67,16 @@ t_hub = TranslatorHub(
                 filenames=[
                     f"{BASE_DIR}/bot/i18n/ru/text.ftl",
                     f"{BASE_DIR}/bot/i18n/ru/button.ftl",
+                ]
+            ),
+        ),
+        FluentTranslator(
+            "en",
+            translator=FluentBundle.from_files(
+                "en-US",
+                filenames=[
+                    f"{BASE_DIR}/bot/i18n/en/text.ftl",
+                    f"{BASE_DIR}/bot/i18n/en/button.ftl",
                 ]
             ),
         )

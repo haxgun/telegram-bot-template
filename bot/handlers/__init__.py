@@ -38,7 +38,7 @@ async def register_handler(dp: Dispatcher) -> None:
 
     for handler_name in handlers:
         # Build the module path based on the handler file name
-        module_path = f"app.handlers.{handler_name}"
+        module_path = f"bot.handlers.{handler_name}"
 
         # Dynamically import the handler module
         module = importlib.import_module(module_path)
